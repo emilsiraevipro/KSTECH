@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="src/Aviaservice.API/Aviaservice.API.csproj" Id="161aee1d-99fe-4bd5-8e16-49f0359331c2" />
+  <Project Path="src/Aviaservice.Application/Aviaservice.Application.csproj" Id="9eaa69b3-58e5-4b8e-a523-23b0ce20c384" />
+  <Project Path="src/Aviaservice.Domain/Aviaservice.Domain.csproj" Id="083c3329-fa9a-4ba1-9711-6164121c793f" />
+  <Project Path="src/Aviaservice.Infrastructure/Aviaservice.Infrastructure.csproj" Id="e930b532-d402-4b64-8008-99303a2c141a" />
+</Solution>
