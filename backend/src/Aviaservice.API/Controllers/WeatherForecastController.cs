@@ -1,3 +1,5 @@
+using Aviaservice.Domain.Module;
+using CSharpFunctionalExtensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aviaservice.API.Controllers
@@ -6,21 +8,35 @@ namespace Aviaservice.API.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries =
-        [
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        ];
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpGet]
+        public IActionResult Get(string title, string description)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            Result<Module> moduleResult = Module.Create(title, description);
+
+            if (moduleResult.IsFailure)
             {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+                return BadRequest(moduleResult.Error);
+
+            }
+            var result = Save(moduleResult.Value);
+
+            if (result.IsFailure)
+            {
+                return BadRequest(result.Error);
+            }
+
+            //сохранение в базу данных
+            return Ok();
+
+        }
+        public Result Save(Module module)
+        {
+            if (true)
+            {
+                return Result.Success();
+            }
+            else return Result.Failure("Error");
         }
     }
 }
