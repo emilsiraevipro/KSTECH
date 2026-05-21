@@ -1,4 +1,4 @@
-﻿namespace Aviaservice.Domain.Module
+﻿namespace KS.Domain.Modules
 
 {
     public class Issue 

@@ -1,12 +1,13 @@
 ﻿using CSharpFunctionalExtensions;
 using static System.Net.WebRequestMethods;
 
-namespace Aviaservice.Domain.Module
+namespace KS.Domain.Modules
 
 {
     public class Module
     {
         private readonly List<Issue> _issues = [];
+        public int GetnumberOfIssues() => _issues.Count;
         //ef core
         private Module() {}
         private Module(string title, string description)
@@ -17,7 +18,7 @@ namespace Aviaservice.Domain.Module
         public Guid Id { get; private set; }
         public string Title { get; private set; } = default!;
         public string Description { get; private set; } = default!;
-        public IReadOnlyList<Issue> Issues => _issues;
+        public IReadOnlyList<Issue> Issues => _issues; // навигационное свойство
         public int NumberOfIssues => Issues.Count();
 
         public void AddIssue(Issue issue)

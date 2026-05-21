@@ -1,7 +1,6 @@
-﻿
-using CSharpFunctionalExtensions;
+﻿using CSharpFunctionalExtensions;
 
-namespace Aviaservice.Domain.Module
+namespace KS.Domain.Modules
 
 {
     public record File
