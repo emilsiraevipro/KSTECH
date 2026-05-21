@@ -1,8 +1,8 @@
+using Aviaservice.Domain.Module;
 using CSharpFunctionalExtensions;
-using KS.Domain.Modules;
 using Microsoft.AspNetCore.Mvc;
 
-namespace KS.API.Controllers
+namespace Aviaservice.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

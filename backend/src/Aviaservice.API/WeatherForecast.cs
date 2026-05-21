@@ -1,4 +1,4 @@
-namespace KS.API
+namespace Aviaservice.API
 {
     public class WeatherForecast
     {

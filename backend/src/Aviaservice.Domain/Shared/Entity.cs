@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace KS.Domain.Shared
+namespace Aviaservice.Domain.Shared
 {
     public abstract class Entity<TId> where TId : notnull 
     { 
-        protected Entity(TId id) { Id = id; }
-        public TId Id { get; private set; }
+        protected Entity(TId id) { id = id; }
+        public TId id { get; private set; }
     }
 }
