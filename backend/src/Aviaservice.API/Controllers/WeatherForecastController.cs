@@ -1,4 +1,4 @@
-using Aviaservice.Domain.Module;
+using Aviaservice.Domain.Modules;
 using CSharpFunctionalExtensions;
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,7 +1,7 @@
 ﻿using CSharpFunctionalExtensions;
 using static System.Net.WebRequestMethods;
 
-namespace Aviaservice.Domain.Module
+namespace Aviaservice.Domain.Modules
 
 {
     public class Module

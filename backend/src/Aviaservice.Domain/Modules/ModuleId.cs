@@ -1,4 +1,4 @@
-﻿namespace Aviaservice.Domain.Module
+﻿namespace Aviaservice.Domain.Modules
 
 {
     public record ModuleId

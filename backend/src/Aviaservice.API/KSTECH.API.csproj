@@ -11,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Aviaservice.Application\Aviaservice.Application.csproj" />
-    <ProjectReference Include="..\Aviaservice.Domain\Aviaservice.Domain.csproj" />
-    <ProjectReference Include="..\Aviaservice.Infrastructure\Aviaservice.Infrastructure.csproj" />
+    <ProjectReference Include="..\Aviaservice.Application\KSTECH.Application.csproj" />
+    <ProjectReference Include="..\Aviaservice.Domain\KSTECH.Domain.csproj" />
+    <ProjectReference Include="..\Aviaservice.Infrastructure\KSTECH.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
