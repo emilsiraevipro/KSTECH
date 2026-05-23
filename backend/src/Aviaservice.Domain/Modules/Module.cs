@@ -1,20 +1,26 @@
-﻿using CSharpFunctionalExtensions;
-using static System.Net.WebRequestMethods;
+﻿
+using KSTECH.Domain.Shared;
+//using System.Reflection;
+//using static System.Net.WebRequestMethods;
 
-namespace Aviaservice.Domain.Modules
+namespace KSTECH.Domain.Modules
 
 {
-    public class Module
-    {
+    public sealed class Module: Shared.Entity<ModuleId>
+    {  
         private readonly List<Issue> _issues = [];
         //ef core
-        private Module() {}
-        private Module(string title, string description)
+        public Module() : base(ModuleId.Empty())
+        {
+            
+        }
+        //private Module(ModuleId moduleId) : base(moduleId) {}
+        private Module(ModuleId moduleId, string title, string description) : base(moduleId)
         {
             Title = title;
             Description = description;
         }
-        public Guid Id { get; private set; }
+
         public string Title { get; private set; } = default!;
         public string Description { get; private set; } = default!;
         public IReadOnlyList<Issue> Issues => _issues;
@@ -27,17 +33,17 @@ namespace Aviaservice.Domain.Modules
         }
 
         // (Module? Module, string? Error)
-        public static Result<Module> Create(string title, string description)
+        public static Result<Module> Create(ModuleId moduleId, string title, string description)
         {
             if (string.IsNullOrWhiteSpace(title))
-                return Result.Failure<Module>("Title can not be empty");
+                return Result<Module>.Failure<Module>("Title can not be empty");
 
             if (string.IsNullOrWhiteSpace(description))
-                return Result.Failure<Module>("Description can not be empty");
+                return Result<Module>.Failure<Module>("Description can not be empty");
 
-            var module = new Module(title, description);
+            var module = new Module(moduleId, title, description);
 
-            return Result.Success(module);
+            return Result<Module>.Success(module);
         }
 
     }

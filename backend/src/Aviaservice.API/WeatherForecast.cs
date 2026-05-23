@@ -1,4 +1,4 @@
-namespace Aviaservice.API
+namespace KSTECH.API
 {
     public class WeatherForecast
     {

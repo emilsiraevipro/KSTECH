@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace Aviaservice.Domain.Modules
+namespace KSTECH.Domain.Modules
 {
     public class User
     {

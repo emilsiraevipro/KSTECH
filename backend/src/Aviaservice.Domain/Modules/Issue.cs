@@ -1,14 +1,21 @@
-﻿namespace Aviaservice.Domain.Modules
+﻿
+using KSTECH.Domain.Shared;
+
+namespace KSTECH.Domain.Modules
 
 {
-    public class Issue 
+    public class Issue : Entity<IssueId>
     {
-        public Guid Id { get; set; }
-        public Guid LessonId { get; set; }
+        //ef core needed
+        private Issue(IssueId id) : base(id)
+        {
+        }
+
+        public Guid? LessonId { get; set; }
         public string Title { get; set; } = default!;
         public string Description { get; set; } = default!;
         public Issue? ParentIssue { get; set; }
         public List<Issue> SubIssues { get; set; } = [];
-        public List<File> Files { get; set; } = [];
+        public IssueDetails Details { get; private set; } = default!;
     }
 }

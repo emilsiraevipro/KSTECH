@@ -1,8 +1,9 @@
-using Aviaservice.Domain.Modules;
-using CSharpFunctionalExtensions;
+
+using KSTECH.Domain.Modules;
+using KSTECH.Domain.Shared;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Aviaservice.API.Controllers
+namespace KSTECH.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -10,9 +11,9 @@ namespace Aviaservice.API.Controllers
     {
 
         [HttpGet]
-        public IActionResult Get(string title, string description)
+        public IActionResult Get(ModuleId moduleId, string title, string description)
         {
-            Result<Module> moduleResult = Module.Create(title, description);
+            Result<Module> moduleResult = Module.Create(moduleId, title, description);
 
             if (moduleResult.IsFailure)
             {
